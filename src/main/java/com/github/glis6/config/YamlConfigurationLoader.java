@@ -1,4 +1,4 @@
-package com.github.glis.config;
+package com.github.glis6.config;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;

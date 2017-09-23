@@ -1,4 +1,4 @@
-package com.github.glis.util;
+package com.github.glis6.util;
 
 import java.util.Collection;
 import java.util.Optional;

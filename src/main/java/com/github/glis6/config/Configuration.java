@@ -1,4 +1,4 @@
-package com.github.glis.config;
+package com.github.glis6.config;
 
 /**
  * @author Glis
