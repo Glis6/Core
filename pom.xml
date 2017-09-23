@@ -29,12 +29,6 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <!--Spigot API-->
@@ -50,11 +44,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.Glis6</groupId>
-            <artifactId>Core</artifactId>
-            <version>-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
