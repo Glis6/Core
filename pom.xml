@@ -45,6 +45,13 @@
             <version>${spigot.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--Bukkit API-->
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>${spigot.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
         <dependency>
             <groupId>org.projectlombok</groupId>
