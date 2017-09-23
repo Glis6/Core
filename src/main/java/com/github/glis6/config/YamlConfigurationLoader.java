@@ -1,5 +1,7 @@
 package com.github.glis6.config;
 
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,6 +24,12 @@ public abstract class YamlConfigurationLoader implements Configuration<YamlConfi
     private final JavaPlugin javaPlugin;
 
     /**
+     * The {@link YamlConfiguration} to use.
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private final YamlConfiguration yamlConfiguration = new YamlConfiguration();
+
+    /**
      * @param javaPlugin The {@link JavaPlugin} the configuration is for.
      */
     public YamlConfigurationLoader(String fileName, JavaPlugin javaPlugin) {
@@ -33,12 +41,13 @@ public abstract class YamlConfigurationLoader implements Configuration<YamlConfi
      * {@inheritDoc}
      */
     @Override
+    @SuppressWarnings("all")
     public YamlConfiguration loadConfiguration() throws IOException, InvalidConfigurationException {
-        final YamlConfiguration yamlConfiguration = new YamlConfiguration();
         File file = new File(javaPlugin.getDataFolder(), fileName);
-        if (!file.exists() && file.mkdirs()) {
-            javaPlugin.saveResource(fileName, false);
+        if (!file.exists()) {
+            file.getParentFile().mkdirs();
             createDefaults();
+            yamlConfiguration.options().copyDefaults(true);
             yamlConfiguration.save(file);
         } else {
             yamlConfiguration.load(file);
